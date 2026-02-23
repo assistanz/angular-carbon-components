@@ -333,7 +333,7 @@ Once all gates are green, a maintainer squash-merges the PR into `main`.
 
 All contributions require a [Developer Certificate of Origin](https://developercertificate.org/) sign-off certifying you have the right to submit the work.
 
-### Option 1 — Sign each commit (recommended)
+### Sign each commit (required)
 
 ```bash
 git commit -s -m "feat(button): add icon-only variant"
@@ -344,17 +344,10 @@ To retroactively sign all commits on a branch:
 
 ```bash
 git rebase --signoff HEAD~<number-of-commits>
+git push --force-with-lease
 ```
 
-### Option 2 — Sign via PR comment
-
-If the DCO bot flags your PR, post this exact comment:
-
-```
-I have read the DCO document and I hereby sign the DCO.
-```
-
-The bot records your agreement and marks the check as passed.
+> **Important:** Every commit must include a `Signed-off-by` line. The DCO check is strictly commit-based — PR comments are not accepted as an alternative.
 
 ---
 

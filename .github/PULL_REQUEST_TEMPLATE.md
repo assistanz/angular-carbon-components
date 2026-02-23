@@ -51,7 +51,7 @@ Closes #
 
 By submitting this pull request, I certify that my contribution is made under the terms of the [Developer Certificate of Origin](https://developercertificate.org/).
 
-<!-- If the DCO bot prompts you, add a comment: "I have read the DCO document and I hereby sign the DCO." -->
+<!-- Every commit must be signed off with `git commit -s`. If commits are missing sign-off, run: git rebase --signoff HEAD~<n> && git push --force-with-lease -->
 
 ## Screenshots
 

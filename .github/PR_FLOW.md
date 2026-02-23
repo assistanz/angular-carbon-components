@@ -222,11 +222,7 @@ Run locally: `npm run build:lib`
 | `dco.yaml` | All commits signed with Developer Certificate of Origin |
 | `codeql-analysis.yaml` | Static security analysis (javascript-typescript) |
 
-**DCO signing:** If the DCO bot comments on your PR, add a comment:
-
-```
-I have read the DCO document and I hereby sign the DCO.
-```
+**DCO signing:** Every commit must include a `Signed-off-by` line. Use `git commit -s` or retroactively sign with `git rebase --signoff HEAD~<n> && git push --force-with-lease`.
 
 ### 3.5 Concurrency
 
