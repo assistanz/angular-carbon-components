@@ -29,7 +29,7 @@ An independent, community-driven Angular component library inspired by the [Carb
 ## Installation
 
 ```bash
-npm install ngcc @carbon/styles @carbon/charts scss
+npm install @assistanz/ngcc @carbon/styles @carbon/charts scss
 ```
 
 ### Setup styles
@@ -42,7 +42,7 @@ Import Carbon styles in your global stylesheet or `angular.json`:
   $font-path: '@ibm/plex'
 );
 
-@use '@carbon/styles';
+@use '@assistanz/ngcc/styles';
 ```
 
 

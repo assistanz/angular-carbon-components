@@ -1,0 +1,30 @@
+
+{
+  "branches": ["main", "master"],
+  "tagFormat": "v${version}",
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "conventionalcommits"
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/npm",
+      { "pkgRoot": "dist/ngcc" }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "npm --prefix projects/ngcc version ${nextRelease.version} --no-git-tag-version && npm run build:lib"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "releasedLabels": ["status: released"]
+      }
+    ]
+  ]
+}

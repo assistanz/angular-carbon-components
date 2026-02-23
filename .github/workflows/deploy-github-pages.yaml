@@ -1,9 +1,13 @@
-name: Build and Publish Storybook to GitHub Pages
+name: Deploy Storybook to GitHub Pages
 
 on:
   push:
     branches:
       - master
+
+concurrency:
+  group: pages-deploy
+  cancel-in-progress: true
 
 permissions:
   contents: read
@@ -13,13 +17,17 @@ permissions:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
@@ -31,12 +39,13 @@ jobs:
         run: npm run build-storybook
 
       - name: Setup Pages
-        uses: actions/configure-pages@v4
+        uses: actions/configure-pages@v5
 
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./storybook-static
 
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

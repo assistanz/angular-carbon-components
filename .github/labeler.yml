@@ -1,0 +1,52 @@
+# Labels applied automatically based on file paths changed in PRs
+'area: components':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/ngcc/src/lib/**/*.ts'
+          - 'projects/ngcc/src/lib/**/*.html'
+
+'area: styles':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/ngcc/src/**/*.scss'
+          - 'projects/ngcc/src/styles/**'
+
+'area: docs':
+  - changed-files:
+      - any-glob-to-any-file:
+          - '**/*.md'
+          - '**/*.mdx'
+          - 'projects/ngcc/src/**/*.stories.ts'
+
+'area: tests':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/ngcc/src/**/*.spec.ts'
+          - 'vitest.config.ts'
+
+'area: ci':
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/**'
+
+'area: storybook':
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.storybook/**'
+          - 'projects/ngcc/src/**/*.stories.ts'
+          - 'projects/ngcc/src/**/*.mdx'
+
+'area: i18n':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'projects/ngcc/src/lib/ngcc-i18n/**'
+
+'area: build':
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'package.json'
+          - 'package-lock.json'
+          - 'angular.json'
+          - 'tsconfig*.json'
+          - 'projects/ngcc/ng-package.json'
+          - 'projects/ngcc/package.json'
